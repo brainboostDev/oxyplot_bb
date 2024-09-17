@@ -47,6 +47,11 @@ namespace OxyPlot.Series
         public double Value { get; set; }
 
         /// <summary>
+        /// Optional Text that gets displayed upon mouse click
+        /// </summary>
+        public string OverrideText_Optional { get; set; }
+
+        /// <summary>
         /// Returns c# code that generates this instance.
         /// </summary>
         /// <returns>C# code.</returns>

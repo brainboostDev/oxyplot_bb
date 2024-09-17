@@ -275,6 +275,9 @@ namespace OxyPlot.Series
         /// <inheritdoc/>
         protected virtual string GetTrackerText(BarItem barItem, object item, int categoryIndex)
         {
+            if (barItem.OverrideText_Optional != null)
+                return barItem.OverrideText_Optional;
+
             var categoryAxis = this.GetCategoryAxis();
             var valueAxis = this.XAxis;
 
