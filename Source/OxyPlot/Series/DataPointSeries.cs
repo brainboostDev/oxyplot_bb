@@ -106,8 +106,13 @@ namespace OxyPlot.Series
 
             if (result != null)
             {
-                result.Text = StringHelper.Format(
-                    this.ActualCulture, 
+                string ret = "";
+
+                if (result.DataPoint.OverrideText_Optional != null)
+                    ret = result.DataPoint.OverrideText_Optional + Environment.NewLine;
+
+                result.Text = ret + StringHelper.Format(
+                    this.ActualCulture,
                     this.TrackerFormatString,
                     result.Item,
                     this.Title,

@@ -275,13 +275,14 @@ namespace OxyPlot.Series
         /// <inheritdoc/>
         protected virtual string GetTrackerText(BarItem barItem, object item, int categoryIndex)
         {
+            string ret = "";
             if (barItem.OverrideText_Optional != null)
-                return barItem.OverrideText_Optional;
+                ret = barItem.OverrideText_Optional + Environment.NewLine;
 
             var categoryAxis = this.GetCategoryAxis();
             var valueAxis = this.XAxis;
 
-            return StringHelper.Format(
+            return ret + StringHelper.Format(
                 this.ActualCulture,
                 this.TrackerFormatString,
                 item,

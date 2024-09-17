@@ -347,14 +347,14 @@ namespace OxyPlot.Series
             this.belowPoints = new List<DataPoint>(source.Count);
 
             bool lastAbove = false;
-            DataPoint? lastPoint = null;
+            DataPoint lastPoint = null;
             foreach (var point in source)
             {
                 bool isAbove = point.y >= limit;
 
                 if (lastPoint != null && isAbove != lastAbove)
                 {
-                    var shared = new DataPoint(this.GetInterpolatedX(lastPoint.Value, point, limit), limit);
+                    var shared = new DataPoint(this.GetInterpolatedX(lastPoint, point, limit), limit);
                     this.abovePoints.Add(isAbove ? nan : shared);
                     this.abovePoints.Add(isAbove ? shared : nan);
 

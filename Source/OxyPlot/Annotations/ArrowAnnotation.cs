@@ -55,7 +55,7 @@ namespace OxyPlot.Annotations
         /// <summary>
         /// Gets or sets the end point of the arrow.
         /// </summary>
-        public DataPoint EndPoint { get; set; }
+        public DataPoint? EndPoint { get; set; }
 
         /// <summary>
         /// Gets or sets the length of the head (relative to the stroke thickness) (the default value is 10).
@@ -85,7 +85,7 @@ namespace OxyPlot.Annotations
         /// Gets or sets the start point of the arrow.
         /// </summary>
         /// <remarks>This property is overridden by the ArrowDirection property, if set.</remarks>
-        public DataPoint StartPoint { get; set; }
+        public DataPoint? StartPoint { get; set; }
 
         /// <summary>
         /// Gets or sets the stroke thickness (the default value is 2).
@@ -104,7 +104,7 @@ namespace OxyPlot.Annotations
         {
             base.Render(rc);
 
-            this.screenEndPoint = this.Transform(this.EndPoint);
+            this.screenEndPoint = this.Transform(this.EndPoint!);
 
             if (this.ArrowDirection.LengthSquared > 0)
             {
@@ -112,7 +112,7 @@ namespace OxyPlot.Annotations
             }
             else
             {
-                this.screenStartPoint = this.Transform(this.StartPoint);
+                this.screenStartPoint = this.Transform(this.StartPoint!);
             }
 
             var d = this.screenEndPoint - this.screenStartPoint;
