@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-      <TargetFrameworks>net462;net6.0-windows;net8.0-windows</TargetFrameworks>
+      <TargetFrameworks>net9.0-windows</TargetFrameworks>
       <UseWPF>true</UseWPF>
       <UseWindowsForms>true</UseWindowsForms>
       <OutputType>WinExe</OutputType>
@@ -10,7 +10,7 @@
     <ProjectReference Include="..\..\..\OxyPlot\OxyPlot.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="PropertyTools.Wpf" Version="3.1.0-alpha0009" />
+    <PackageReference Include="PropertyTools.Wpf" Version="3.1.0" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -51,5 +51,8 @@
     </Content>
     <None Include="ReadMe.txt" />
     <Resource Include="Examples\HistogramDemo\hare.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="DotNet.ReproducibleBuilds" Version="1.2.25" />
   </ItemGroup>
 </Project>
